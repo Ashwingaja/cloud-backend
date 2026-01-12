@@ -1,11 +1,7 @@
-import express from "express";
-import cors from "cors";
 
-const app = express();
-app.use(cors());
-
-const courses =[
-  {
+export default function handler(req, res) {
+  res.status(200).json([
+   {
     "id": "1",
     "courseName": "Java",
     "coursePrice": "100",
@@ -53,10 +49,5 @@ const courses =[
     "rating": 5,
     "content": "Node.js is a JavaScript runtime for building server-side applications. It is fast, scalable, and ideal for real-time apps, APIs, streaming services, and backend development due to its non-blocking, event-driven architecture."
   }
-];
-
-app.get("/", (req, res) => {
-  res.json(courses);
-});
-
-export default app;
+]);
+}

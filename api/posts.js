@@ -1,10 +1,6 @@
-import express from "express";
-import cors from "cors";
 
-const app = express();
-app.use(cors());
-
-const posts = [
+export default function handler(req, res) {
+  res.status(200).json([
   {
     "id": "1",
     "name": "Java",
@@ -35,10 +31,5 @@ const posts = [
     "name": "Node.js",
     "description": "Node.js is a JavaScript runtime for building server-side applications. It is fast, scalable, and ideal for real-time apps, APIs, streaming services, and backend development due to its non-blocking, event-driven architecture."
   }
-];
-
-app.get("/", (req, res) => {
-  res.json(posts);
-});
-
-export default app;
+]);
+}
